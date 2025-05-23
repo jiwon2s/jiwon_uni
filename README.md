@@ -1,9 +1,25 @@
 # jiwon_uni
 
-# 📋 Universal Clipboard Simulation – 기기 간 클립보드 동기화 시스템
+# 🖥️ Universal Clipboard Simulation – 기기 간 클립보드 동기화 시스템
 
-이 프로젝트는 서로 다른 기기에서 클립보드를 공유하는 'Universal Clipboard' 시스템을 시뮬레이션한 예제입니다.  
-사용자는 단순히 복사/붙여넣기만 하지만, 그 사이에는 암호화, 네트워크 전송, 복호화 등의 복잡한 과정이 자동으로 수행됩니다.
+## 📌 프로젝트 개요
+
+Universal Clipboard는 애플 생태계에서 제공하는 기능으로,  
+**서로 다른 기기 간에 클립보드(복사한 내용)를 실시간으로 공유**할 수 있도록 지원합니다.  
+예: MacBook에서 복사한 텍스트를 iPhone에서 바로 붙여넣을 수 있음.
+
+이 프로젝트는 해당 시스템을 간단한 Python 코드로 시뮬레이션하여,  
+**시퀀스 다이어그램 기반 시스템 분석 → 코드 구현 → 모듈 구조 평가**의 과정을 수행합니다.
+
+---
+
+## 🎯 사용 시나리오
+
+1. 사용자가 MacBook에서 어떤 텍스트를 복사합니다.
+2. 운영체제가 클립보드 변경을 감지하고 암호화합니다.
+3. 근처의 연결된 iPhone을 Bluetooth/Wi-Fi로 탐색합니다.
+4. 기기 간 인증 후 암호화된 데이터를 전송합니다.
+5. 사용자가 iPhone에서 붙여넣기를 누르면 복호화하여 적용합니다.
 
 ---
 
@@ -13,7 +29,7 @@
 
 ---
 
-## 💻 샘플 코드 (요약)
+## 💻 샘플 코드 (일부 발췌)
 
 ```python
 class Clipboard:
@@ -27,6 +43,5 @@ class Clipboard:
     def paste(self):
         print("[Device B] 붙여넣기 결과:", self.data)
         return self.data
-
 
 
