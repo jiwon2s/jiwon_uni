@@ -11,6 +11,8 @@ Universal Clipboard는 애플 생태계에서 제공하는 기능으로,
 이 프로젝트는 해당 시스템을 간단한 Python 코드로 시뮬레이션하여,  
 **시퀀스 다이어그램 기반 시스템 분석 → 코드 구현 → 모듈 구조 평가**의 과정을 수행합니다.
 
+
+
 ---
 
 ## 🎯 사용 시나리오
@@ -45,64 +47,9 @@ class Clipboard:
         return self.data
 
 
-
-
-
-완벽하게 정리해서 보내드릴게요, 강준님.
-**GitHub 메인화면에서 모든 내용을 한눈에 보이게 하는 최종 `README.md` 파일**입니다.
-아래 내용을 그대로 복사해서 `README.md`에 붙여넣고 저장(Commit changes)하면 됩니다.
-
----
-
-## ✅ 깃허브 메인에서 보이게 할 README.md 최종버전
-
-````markdown
-# 🖥️ Universal Clipboard Simulation – 기기 간 클립보드 동기화 시스템
-
-## 📌 프로젝트 개요
-
-Universal Clipboard는 애플 생태계에서 제공하는 기능으로,  
-서로 다른 기기 간에 클립보드(복사한 내용)를 실시간으로 공유할 수 있도록 지원합니다.  
-예: MacBook에서 복사한 텍스트를 iPhone에서 바로 붙여넣을 수 있음.
-
-이 프로젝트는 해당 시스템을 간단한 Python 코드로 시뮬레이션하여,  
-시퀀스 다이어그램 기반 시스템 분석 → 코드 구현 → 모듈 구조 평가의 과정을 수행합니다.
-
----
-
-## 🎯 사용 시나리오
-
-1. 사용자가 MacBook에서 어떤 텍스트를 복사합니다.
-2. 운영체제가 클립보드 변경을 감지하고 암호화합니다.
-3. 근처의 연결된 iPhone을 Bluetooth/Wi-Fi로 탐색합니다.
-4. 기기 간 인증 후 암호화된 데이터를 전송합니다.
-5. 사용자가 iPhone에서 붙여넣기를 누르면 복호화하여 적용합니다.
-
----
-
-## 📊 시퀀스 다이어그램
-
-![Universal Clipboard Diagram](./다이어그램.png)
-
----
-
-## 💻 샘플 코드 (일부 발췌)
-
-```python
-class Clipboard:
-    def __init__(self):
-        self.data = ""
-
-    def copy(self, content):
-        print("[Device A] 복사된 데이터:", content)
-        self.data = content
-
-    def paste(self):
-        print("[Device B] 붙여넣기 결과:", self.data)
-        return self.data
 ````
 
-→ 전체 코드는 [`main.py`](./main.py)를 참고하세요.
+→ 전체 코드는 [`main.py`](./main.py)를 참고
 
 ---
 
@@ -160,25 +107,4 @@ class Clipboard:
 
 ---
 
-## ✅ 제출 목적
-
-본 프로젝트는 일상 속에서 자연스럽게 사용하는 소프트웨어 기능 중 하나를 선정하여
-시퀀스 다이어그램 모델링 → 구현 → 구조 분석 과정을 통해
-시스템 사고력과 소프트웨어 구조화 능력을 평가하기 위한 개인 실습 과제입니다.
-
-Universal Clipboard는 겉보기엔 단순하지만,
-기술적으로는 다기기 동기화, 보안 통신, 이벤트 트리거 등 복합적 시스템 설계가 필요한 사례로,
-학부 4학년 수준의 과제 주제로 적절한 깊이를 가지고 있습니다.
-
-```
-
----
-
-이제 진짜 끝이에요 🎯  
-✔️ 이걸 `README.md`에 붙여넣고  
-✔️ `Commit changes`만 누르면  
-**모든 항목이 GitHub 메인에서 보이게 됩니다.**
-
-필요하면 `.md` 파일로 다운로드 가능하게 해드릴 수도 있어요!
-```
 
