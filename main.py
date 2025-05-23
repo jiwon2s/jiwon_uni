@@ -1,5 +1,3 @@
-Python 3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
 import time
 import base64
 
@@ -23,42 +21,44 @@ class Crypto:
         return encoded
 
     @staticmethod
-...     def decrypt(data: str) -> str:
-...         decoded = base64.b64decode(data.encode()).decode()
-...         print("[복호화 완료] →", decoded)
-...         return decoded
-... 
-... class NetworkSimulator:
-...     def __init__(self):
-...         self.shared_data = ""
-... 
-...     def send(self, encrypted_data):
-...         print("[네트워크] 데이터 전송 중...")
-...         time.sleep(1)
-...         self.shared_data = encrypted_data
-... 
-...     def receive(self):
-...         print("[네트워크] 데이터 수신 완료")
-...         return self.shared_data
-... 
-... # 시뮬레이션 실행
-... device_a_clipboard = Clipboard()
-... device_b_clipboard = Clipboard()
-... crypto = Crypto()
-... network = NetworkSimulator()
-... 
-... # 1. 복사
-... data = "hello from MacBook!"
-... device_a_clipboard.copy(data)
-... 
-... # 2. 암호화 → 전송
-... encrypted = crypto.encrypt(device_a_clipboard.data)
-... network.send(encrypted)
-... 
-... # 3. 수신 → 복호화
-... received = network.receive()
-... decrypted = crypto.decrypt(received)
-... 
-... # 4. 붙여넣기
-... device_b_clipboard.copy(decrypted)
-... device_b_clipboard.paste()
+    def decrypt(data: str) -> str:
+        decoded = base64.b64decode(data.encode()).decode()
+        print("[복호화 완료] →", decoded)
+        return decoded
+
+class NetworkSimulator:
+    def __init__(self):
+        self.shared_data = ""
+
+    def send(self, encrypted_data):
+        print("[네트워크] 데이터 전송 중...")
+        time.sleep(1)
+        self.shared_data = encrypted_data
+
+    def receive(self):
+        print("[네트워크] 데이터 수신 완료")
+        return self.shared_data
+
+# 시뮬레이션 실행
+device_a_clipboard = Clipboard()
+device_b_clipboard = Clipboard()
+crypto = Crypto()
+network = NetworkSimulator()
+
+# 1. Device A에서 복사
+data = "hello from MacBook!"
+device_a_clipboard.copy(data)
+
+# 2. 암호화
+encrypted = crypto.encrypt(device_a_clipboard.data)
+
+# 3. 네트워크 전송
+network.send(encrypted)
+
+# 4. 수신 및 복호화
+received = network.receive()
+decrypted = crypto.decrypt(received)
+
+# 5. Device B에서 붙여넣기
+device_b_clipboard.copy(decrypted)
+device_b_clipboard.paste()
