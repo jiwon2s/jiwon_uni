@@ -27,7 +27,7 @@ Universal Clipboard는 애플 생태계에서 제공하는 기능으로,
 
 ## 📊 시퀀스 다이어그램
 
-![Universal Clipboard Diagram](./다이어그램.png)
+![Universal Clipboard Diagram](./diagram.png)
 
 ---
 
